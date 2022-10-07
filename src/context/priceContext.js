@@ -17,11 +17,13 @@ const url = 'https://api.livecoinwatch.com/overview';
 
 const PriceContextProvider = ({children}) => {
     const [currency, setCurrency] = useState("usd")
+    const[loadingMarketData, setLoadingMarketData] = useState(false)
     
     
     const[marketCapData, setMarketCapData] = useState([])
 
     const fetchMarketData = async () =>{
+      setLoadingMarketData(true)
       try {
        const {data} = await axios.post(url,
         { body:  currency },
@@ -33,10 +35,12 @@ const PriceContextProvider = ({children}) => {
        } 
      )
        setMarketCapData(data)
+       setLoadingMarketData(false)
 
         
       } catch (error) {
         console.log(error)
+        setLoadingMarketData(false)
         
       }
     }

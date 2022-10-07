@@ -152,7 +152,7 @@ const MarketPage = () => {
 
  
   return (
-    <div className='w-[60%] border m-auto flex-col mt-32 gap-4 rounded-tr-xl rounded-tl-xl
+    <div className='w-full md:w-[60%] border m-auto flex-col mt-32 gap-4 rounded-tr-xl rounded-tl-xl
       flex items-center justify-center'>
       <CryptoMarketCap setStartDate={setStartDate} startDate={startDate} />
       {/* <CircleLoader color="#d636d0" /> */}

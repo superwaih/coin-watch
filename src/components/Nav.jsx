@@ -3,21 +3,23 @@ import {FiSearch} from "react-icons/fi"
 import {  Select } from '@chakra-ui/react'
 import { currencies } from '../data/resource'
 import { useColorMode } from '@chakra-ui/react'
+import {AiOutlineBulb} from "react-icons/ai"
 import { usePriceState } from '../context/priceContext'
 
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const {setCurrency} = usePriceState()
   return (
-   <div className="bg-[#b269ff]">
+   <div className="bg-[#b269ff] hidden md:block">
      <div className=' p-4 w-[80%]  m-auto gap-4   flex items-center justify-center'>
       <div className="logo flex-1">
       <h2 className='text-3xl '>Coin Watch</h2>
       </div>
 
       <div onClick={toggleColorMode} className="toggle_btn cursor-pointer">
-      Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-        dark
+      <AiOutlineBulb />
+       {colorMode === 'light' ? 'Dark' : 'Light'}
+    
 
       </div>
       <div className="refresh_btn">
