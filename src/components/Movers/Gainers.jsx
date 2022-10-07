@@ -19,11 +19,11 @@ import { numberWithCommas } from '../../helpers'
 
 const Gainers = ({gainData, isloading, type}) => {
   return (
-    <div className='w-full flex font-[18px]  min-h-[50vh]'>
+    <div className='w-full flex font-[18px]'>
         {
             isloading ?
             ( 
-                <div className='flex w-full item-center justify-center'>
+                <div className='flex min-h-[30vh] w-full item-center justify-center'>
                   <MoonLoader
                   color="#c936d6"
                   size={100}
@@ -35,6 +35,7 @@ const Gainers = ({gainData, isloading, type}) => {
                 
                 <TableContainer>
                     <Table size='sm'>
+  
                       <Thead>
                         <Tr>
                           <Th>Rank</Th>
@@ -52,7 +53,7 @@ const Gainers = ({gainData, isloading, type}) => {
                          gainData.map((coin) => {
                         //    const profit = coin.price_change_percentage_24h > 0
                            return(
-                             <Tr className='cursor-pointer w-full hover:bg-purple-600' key={coin.id}>
+                             <Tr className='cursor-pointer text-[17px] w-full hover:bg-purple-600' key={coin.id}>
                              <Td >
                              <p className='flex flex-col items-center'><AiOutlineHeart />
                                {coin.market_cap_rank}</p>
@@ -68,7 +69,7 @@ const Gainers = ({gainData, isloading, type}) => {
                                </div>
                                
                              </Td>
-                             <Td>${numberWithCommas(coin.current_price)}</Td>
+                             <Td>${coin.current_price}</Td>
                              <Td className='hidden sm:table-cell'>${millify(coin.market_cap)}</Td>
                              <Td  >
                                {type === "gain" ? (<p className='text-green-400 flex gap-2 items-center'>

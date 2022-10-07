@@ -63,8 +63,18 @@ const TrendingPage = () => {
       <div className="mt-5 w-full border p-4">
         <h4 className='font-semibold text-2xl pt-6 pb-3 px-2'>Cryptocurrency Movers</h4>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <Gainers gainData={gainers} type={"gain"} loading={loading} />
-        <Gainers gainData={losers} type={"lose"} loading={isloading} />
+       <div >
+        <h5 className='font-semibold text-2xl pt-6 pb-3 px-2'>Biggest Gainers</h5>
+        <Divider />
+       <Gainers gainData={gainers} type={"gain"} loading={loading} />
+       </div>
+       <div c>
+        <h5 className='font-semibold text-2xl pt-6 pb-3 px-2'>Biggest Losers</h5>
+        <Divider />
+       <Gainers gainData={losers} type={"lose"} loading={isloading} />
+
+
+       </div>
         </div>
 
       </div>
