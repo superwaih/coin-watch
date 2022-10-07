@@ -21,7 +21,6 @@ const MarketPage = () => {
   const[loading, setLoading] = useState(true)
   const[chartData, setChartData] = useState([])
   const{currency} = usePriceState()
-  console.log(startDate)
 
   const fetchMarketCap = async() =>{
     let graphData = []
@@ -46,7 +45,8 @@ const MarketPage = () => {
        const graphData = data.map((d) => {
         return {
           Date: d.date,
-          Cap: d.cap
+          Cap: d.cap,
+          Volume: d.volume
         }
        })
        
@@ -148,14 +148,12 @@ const MarketPage = () => {
   useEffect(() => {
     fetchMarketCap()
   }, [currency, startDate])
-  console.log(chartData)
 
  
   return (
-    <div className='w-full md:w-[60%] border m-auto flex-col mt-32 gap-4 rounded-tr-xl rounded-tl-xl
+    <div className='w-full md:w-[75%] border mx-auto flex-col mt-32 gap-4 rounded-tr-xl rounded-tl-xl
       flex items-center justify-center'>
       <CryptoMarketCap setStartDate={setStartDate} startDate={startDate} />
-      {/* <CircleLoader color="#d636d0" /> */}
       <MarketCapChart chartData={chartData} loading={loading} />
 
 

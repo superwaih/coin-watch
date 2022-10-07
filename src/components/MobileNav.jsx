@@ -1,5 +1,7 @@
 import React from 'react'
 import { useColorMode } from '@chakra-ui/react'
+import { Skeleton } from '@chakra-ui/react'
+
 
 import { FiSearch } from 'react-icons/fi'
 import { usePriceState } from '../context/priceContext'
@@ -12,7 +14,12 @@ const MobileNav = () => {
         <div className="first_row p-4 flex justify-between">
             <div>
                 <p className='uppercase' >Market Cap</p>
-                <p className='text-purple-600 font-bold text-[18px]'>${millify(marketCapData?.cap)}</p>
+                {marketCapData.cap === undefined ? 
+                (<Skeleton>
+                    <div>Hello</div>
+                </Skeleton>)    :
+                <p className=' text-[18px] text-center font-semibold'>${millify(marketCapData?.cap)}</p>
+            }
             </div>
             <div className="">
                 <h4>Coin Watch</h4>
@@ -20,7 +27,12 @@ const MobileNav = () => {
 
             <div>
                 <p className='uppercase'>24h Volume</p>
-                <p className='text-purple-600 font-bold text-[18px]'>${millify(marketCapData?.volume)}</p>
+                {marketCapData.volume === undefined ? 
+                (<Skeleton>
+                    <div>Hello</div>
+                </Skeleton>)    :
+                <p className=' text-[18px] text-center font-semibold'>${millify(marketCapData?.volume)}</p>
+            }
             </div>
 
         </div>
