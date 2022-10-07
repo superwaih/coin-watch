@@ -16,7 +16,7 @@ const Nav = () => {
       <h2 className='text-3xl '>Coin Watch</h2>
       </div>
 
-      <div onClick={toggleColorMode} className="toggle_btn cursor-pointer">
+      <div onClick={toggleColorMode} className="toggle_btn flex items-center flex-col cursor-pointer">
       <AiOutlineBulb />
        {colorMode === 'light' ? 'Dark' : 'Light'}
     

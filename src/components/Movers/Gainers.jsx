@@ -40,7 +40,7 @@ const Gainers = ({gainData, isloading, type}) => {
                           <Th>Rank</Th>
                           <Th>Coin</Th>
                           <Th>Price</Th>
-                          <Th className='hidden md:block'>Volume 24h</Th>
+                          <Th className='hidden sm:table-cell'>Volume 24h</Th>
                           <Th>24h</Th>
        
                          
@@ -69,7 +69,7 @@ const Gainers = ({gainData, isloading, type}) => {
                                
                              </Td>
                              <Td>${numberWithCommas(coin.current_price)}</Td>
-                             <Td className='hidden sm:block'>${millify(coin.market_cap)}</Td>
+                             <Td className='hidden sm:table-cell'>${millify(coin.market_cap)}</Td>
                              <Td  >
                                {type === "gain" ? (<p className='text-green-400 flex gap-2 items-center'>
                                  <span >+{coin.price_change_percentage_24h.toFixed(2)}%</span>
