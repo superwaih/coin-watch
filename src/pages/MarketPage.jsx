@@ -5,6 +5,9 @@ import { usePriceState } from '../context/priceContext'
 import {CircleLoader} from "react-spinners"
 import MarketCapChart from '../components/MarketCapChart'
 import Footer from '../components/Footer'
+import TreeMapComponent from '../components/Movers/TreeMap'
+import { numberWithCommas } from '../helpers'
+import millify from 'millify'
 const YEAR_MILLISECONDS = 31536000000
 const DAY_MILLISECONDS = 86400000
 const D7_MILLISECONDS = 604800000
@@ -42,11 +45,16 @@ const MarketPage = () => {
           }
          } 
        )
+      
        const graphData = data.map((d) => {
+        const {date, cap, volume} = d
+        // let capp = millify(cap)
+        const timestamp = new Date(date).toLocaleDateString("en-us")
+
         return {
-          Date: d.date,
-          Cap: d.cap,
-          Volume: d.volume
+          Date: timestamp,
+          Cap: cap,
+          Volume: volume
         }
        })
        
@@ -70,9 +78,13 @@ const MarketPage = () => {
          } 
        )
        const graphData = data.map((d) => {
+        const [date, cap, volume, liquidity, btcDominance] = d
+        let capp = millify(cap)
+        const timestamp = new Date(date).toLocaleDateString("en-us")
+
         return {
-          Date: d.date,
-          Cap: d.cap
+          Date: timestamp,
+          Cap: capp
         }
        })
        
@@ -149,12 +161,12 @@ const MarketPage = () => {
     fetchMarketCap()
   }, [currency, startDate])
 
- 
   return (
-    <div className='w-full md:w-[75%] border mx-auto flex-col mt-32 gap-4 rounded-tr-xl rounded-tl-xl
+    <div className='w-full md:w-[75%] border mb-4 bg-[#293143] mx-auto flex-col mt-32 gap-4 rounded-tr-xl rounded-tl-xl
       flex items-center justify-center'>
       <CryptoMarketCap setStartDate={setStartDate} startDate={startDate} />
       <MarketCapChart chartData={chartData} loading={loading} />
+      <TreeMapComponent />
 
 
 

@@ -10,9 +10,12 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.27.2",
+    "chartjs-chart-treemap": "^2.0.2",
     "framer-motion": "^7.5.2",
     "millify": "^5.0.1",
+    "polished": "^4.2.2",
     "react": "^18.2.0",
+    "react-canvas-treemap": "^1.0.6",
     "react-chartjs-2": "^4.3.1",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
@@ -20,6 +23,7 @@
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.5",
     "recharts": "^2.1.14",
+    "styled-components": "^5.3.6",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
