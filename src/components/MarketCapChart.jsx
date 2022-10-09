@@ -9,7 +9,7 @@ import {
   LineElement,
   Title,
   TimeScale,
- 
+
   Filler,
   Tooltip,
   Legend,
@@ -77,12 +77,38 @@ const MarketCapChart = ({chartData, loading}) => {
                 ],
               }}
               options={{
+               
+                interaction: {
+                  mode: 'nearest',
+                },
+
                 scales: {
+                  x: {
+                   
+                  ticks:{
+                    autoSkip: true,  
+                  maxRotation: 0,
+                    stepSize:2,
+                    major:{
+                      enabled: true
+                    },
+                    callback: function(val, index) {
+                      // Hide every 2nd tick label
+                      return index % 2 === 0 ? this.getLabelForValue(val) : '';
+                    },
+                    
+                  },
+                  time:{
+                    unit: "day"
+                  },
+                  
+                  },
                   y: {
                     type: 'linear',
                     display: true,
                     position: 'left',
                     ticks:{
+                      color: "pink",
                       callback: function(value, index, ticks){
                         return "$" + millify(value)
                       }
@@ -94,13 +120,14 @@ const MarketCapChart = ({chartData, loading}) => {
                     display: true,
                     position: 'right',
                     ticks: {
+                      color: 'rgb(153, 102, 255)',
                         callback: function(value, index, ticks){
                           return "$" +millify(value)
                         }
                     },
-                    color: 'rgb(153, 102, 255)',
+                    
                     grid: {
-                      drawOnChartArea: false,
+                      drawOnChartArea: true,
                     },
                   },
                 },

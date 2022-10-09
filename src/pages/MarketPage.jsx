@@ -2,18 +2,10 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import CryptoMarketCap from '../components/CryptoMarketCap'
 import { usePriceState } from '../context/priceContext'
-import {CircleLoader} from "react-spinners"
 import MarketCapChart from '../components/MarketCapChart'
 import Footer from '../components/Footer'
 import TreeMapComponent from '../components/Movers/TreeMap'
-import { numberWithCommas } from '../helpers'
 import { useColorMode } from '@chakra-ui/react'
-import millify from 'millify'
-const DAY_MILLISECONDS = 86400000
-// const D7_MILLISECONDS = 604800000
-// const D30_MILLISECONDS = 2592000000
-// const D90_MILLISECONDS = 7776000000
-// const YEAR_MILLISECONDS = 31557600000
 const ALL_MILLISECONDS = 126230400000
 
 
