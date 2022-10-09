@@ -18,7 +18,7 @@ import {MoonLoader} from "react-spinners"
   ];
 
   const CustomizedContent = (props) => {
-    const { root, depth, x, y, width, height, index, colors, name, value } = props;
+    const { root, depth, x, y, width, height, index, colors, name } = props;
   
     return (
       <g>

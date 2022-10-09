@@ -61,11 +61,11 @@ export const timeframes = [
     {
         id: 5,
         label: "1YR",
-        value: 31536000000,
+        value: 31557600000,
     },
     {
         id: 6,
         label: "ALL",
-        value: 94670856000,
+        value: 126230400000,
     },
 ]
