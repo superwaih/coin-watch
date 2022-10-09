@@ -24,7 +24,6 @@ const Nav = () => {
       </div>
       <div className="refresh_btn">
         <Select 
-        // onChange={(e) => setCurrency(e.target.value)}
         >
           <option>2s</option>
           <option>4s</option>

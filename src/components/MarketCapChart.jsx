@@ -1,7 +1,6 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef } from 'react'
 // import { AreaChart, Area, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import {MoonLoader} from "react-spinners"
-import { usePriceState } from '../context/priceContext';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -9,10 +8,14 @@ import {
   PointElement,
   LineElement,
   Title,
+  TimeScale,
+ 
+  Filler,
   Tooltip,
   Legend,
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
+import millify from 'millify';
 
 
 ChartJS.register(
@@ -20,9 +23,12 @@ ChartJS.register(
   LinearScale,
   PointElement,
   LineElement,
+
+  TimeScale,
   Title,
+  Filler,
   Tooltip,
-  // Legend
+  Legend
 );
 
 
@@ -53,17 +59,19 @@ const MarketCapChart = ({chartData, loading}) => {
 
                 datasets: [
                   {
-                    fill: true,
+                    
                     data: chartData.map((coin) => coin.Cap),
                     label: `Crypto MarketCap `,
                     borderColor: "#A020F0",
                     yAxisID: 'y',
+                    tension: 0.3
                   },
                   {
                     fill: true,
                     data: chartData.map((coin) => coin.Volume),
                     label: `Crypto Market Volume `,
-                    borderColor: "#FFC0CB",
+                    borderColor: "rgba(0, 0, 0, 0.5)",
+                    backgroundColor: 'rgba(0, 0, 0, 0.5)',
                     yAxisID: 'y1',
                   },
                 ],
@@ -74,11 +82,23 @@ const MarketCapChart = ({chartData, loading}) => {
                     type: 'linear',
                     display: true,
                     position: 'left',
+                    ticks:{
+                      callback: function(value, index, ticks){
+                        return "$" + millify(value)
+                      }
+                    }
+                    
                   },
                   y1: {
                     type: 'linear',
                     display: true,
                     position: 'right',
+                    ticks: {
+                        callback: function(value, index, ticks){
+                          return "$" +millify(value)
+                        }
+                    },
+                    color: 'rgb(153, 102, 255)',
                     grid: {
                       drawOnChartArea: false,
                     },
@@ -110,25 +130,3 @@ const MarketCapChart = ({chartData, loading}) => {
 export default MarketCapChart
 
 
-
-{/* <ResponsiveContainer width="98%" aspect={3 / 1}>
-<AreaChart
-  width={500}
-  height={250}
-  data={chartData}
-  margin={{
-    top: 5,
-    right: 15,
-    left: 0,
-    bottom: 0,
-  }}
->
-  <XAxis dataKey="Date" />
-  <YAxis />
-  <Tooltip />
-  <Area type="monotone" dataKey="Volume" stroke="#888"  />
-  <Area type="monotone" dataKey="Cap" stroke="#8884d8"  />
-
-
-</AreaChart>
-</ResponsiveContainer> */}

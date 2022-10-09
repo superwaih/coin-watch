@@ -7,20 +7,22 @@ import MarketCapChart from '../components/MarketCapChart'
 import Footer from '../components/Footer'
 import TreeMapComponent from '../components/Movers/TreeMap'
 import { numberWithCommas } from '../helpers'
+import { useColorMode } from '@chakra-ui/react'
 import millify from 'millify'
 const DAY_MILLISECONDS = 86400000
 // const D7_MILLISECONDS = 604800000
 // const D30_MILLISECONDS = 2592000000
 // const D90_MILLISECONDS = 7776000000
 // const YEAR_MILLISECONDS = 31557600000
-// const ALL_MILLISECONDS = 126230400000
+const ALL_MILLISECONDS = 126230400000
 
 
 
 const url = 'https://api.livecoinwatch.com/overview/history'
 
 const MarketPage = () => {
-  const[startDate, setStartDate] = useState(DAY_MILLISECONDS)
+  const {colorMode} = useColorMode()
+  const[startDate, setStartDate] = useState(ALL_MILLISECONDS)
   const[loading, setLoading] = useState(true)
   const[chartData, setChartData] = useState([])
   const{currency} = usePriceState()
@@ -227,8 +229,9 @@ const MarketPage = () => {
   return (
     <div>
     <div className='w-full mx-auto md:w-[75%] mt-32'>
-    <div className=' border mb-4 bg-[#293143]  flex-col  gap-4 rounded-tr-xl rounded-tl-xl
-      flex items-center justify-center'>
+    <div className={colorMode === 'light' ? 
+    ' border mb-4   flex-col  gap-4 rounded-tr-xl rounded-tl-xl flex items-center justify-center' : 
+    ' border mb-4 bg-[#293143]  flex-col gap-4 rounded-tr-xl rounded-tl-xl flex items-center justify-center'} >
       <CryptoMarketCap setStartDate={setStartDate} startDate={startDate} />
       <MarketCapChart chartData={chartData} loading={loading} />
     </div>

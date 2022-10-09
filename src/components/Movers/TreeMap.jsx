@@ -43,10 +43,11 @@ import {MoonLoader} from "react-spinners"
             y={y + height / 2 + 7}
             textAnchor="middle"
             fill="#fff"
+            fontWeight={400}
             // transform='uppercase'
-            fontSize={14}
+            fontSize={18}
           >
-            {name}
+            {name.toUpperCase()}
           </text>
         ) : null}
       
