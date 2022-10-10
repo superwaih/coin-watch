@@ -6,6 +6,7 @@ import MarketCapChart from '../components/MarketCapChart'
 import Footer from '../components/Footer'
 import TreeMapComponent from '../components/Movers/TreeMap'
 import { useColorMode } from '@chakra-ui/react'
+import LiquidityChart from '../components/Movers/LiquidityChartContainer'
 const ALL_MILLISECONDS = 126230400000
 
 
@@ -223,15 +224,19 @@ const MarketPage = () => {
     <div className='w-full mx-auto md:w-[75%] mt-32'>
     <div className={colorMode === 'light' ? 
     ' border mb-4   flex-col  gap-4 rounded-tr-xl rounded-tl-xl flex items-center justify-center' : 
-    ' border mb-4 bg-[#293143]  flex-col gap-4 rounded-tr-xl rounded-tl-xl flex items-center justify-center'} >
+    ' border mb-4 bg-[#293143]  flex-col gap-4 rounded-tr-xl rounded-tl-xl flex justify-center'} >
       <CryptoMarketCap setStartDate={setStartDate} startDate={startDate} />
       <MarketCapChart chartData={chartData} loading={loading} />
+      <LiquidityChart />
+
+      
     </div>
 
     <div>
       <h2 className='text-2xl font-semibold md:text-left text-center py-4'>Crypto Market Cap Breakdown</h2>
       <TreeMapComponent />
     </div>
+
 
     </div>
     <Footer />

@@ -14,7 +14,11 @@ export const TrendingCoins = (currency) =>
   export const fetchCoinPrices = (coinId) =>
   `https://api.coingecko.com/api/v3/coins/${coinId}/market_chart?vs_currency=usd&days=1`;
 
+  export const fetchMarketLiquidity = (start, end) =>
+  `http-api.livecoinwatch.com/overview/liq?currency=USD&start=${start}&end=${end}`;
+
+
   
-  // https://data.gateapi.io/api2/1/orderBook/btc_usdt#/
+
  
   
