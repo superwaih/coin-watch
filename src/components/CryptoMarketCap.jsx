@@ -69,10 +69,10 @@ const CryptoMarketCap = ({ setStartDate, startDate }) => {
                 </div>
 
                 <div className="flex gap-5">
-                    <p>Scale</p>
+                    <p>Scale: </p>
                     <div className="btns">
                         <button>Linear</button>
-                        <button>Log</button>
+                       
                     </div>
                 </div>
             </div>

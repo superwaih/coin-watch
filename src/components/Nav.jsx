@@ -10,7 +10,8 @@ const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
   const {setCurrency} = usePriceState()
   return (
-   <div className="bg-[#b269ff] hidden md:block">
+       
+       <div className={colorMode === 'light' ? "bg-[#b269ff] hidden md:block text-white font-bold" : "bg-[#b269ff] hidden md:block text-white font-bold"} >
      <div className=' p-4 w-[80%]  m-auto gap-4   flex items-center justify-center'>
       <div className="logo flex-1">
       <h2 className='text-3xl '>Coin Watch</h2>
@@ -43,9 +44,9 @@ const Nav = () => {
         </Select>
 
       </div>
-      <div className="searchbar p-2 border hidden md:flex gap-3 rounded items-center ">
+      <div className="searchbar p-2 border border-slate-500 hidden md:flex gap-3 rounded items-center ">
       <FiSearch />
-        <input className='border-none outline-none bg-transparent' type="text" placeholder='Search' />
+        <input className='border-none outline-none bg-transparent placeholder:text-gray-500' type="text" placeholder='Search' />
       </div>
       
     </div>
