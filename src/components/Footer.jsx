@@ -1,5 +1,6 @@
 import { Divider, useColorMode } from '@chakra-ui/react'
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Footer = () => {
   const {colorMode} = useColorMode()
@@ -16,7 +17,9 @@ const Footer = () => {
           <p>Portfolio</p>
           <p>Overview</p>
           <p>Exchanges</p>
-          <p>Widget</p>
+          <Link to="/trending">
+          <p>Trending</p>
+          </Link>
           <p>Compare</p>
           <p>API</p>
 
