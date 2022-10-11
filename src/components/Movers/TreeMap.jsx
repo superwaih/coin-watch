@@ -13,7 +13,7 @@ import {MoonLoader} from "react-spinners"
     "#FFBA01",
     "#7EC8E3",
     "#F07DEA",
-    "#A460ED",
+    
   
   ];
 
@@ -94,11 +94,11 @@ const TreeMapComponent = () => {
       )
     }else{
       return (
-        <ResponsiveContainer width="98%" aspect={3 / 1}>
+        <ResponsiveContainer width="98%" aspect={2 / 1}>
     
         <Treemap
           width={400}
-          height={200}
+          height={300}
           data={marketDominance}
           dataKey="size"
           stroke="#fff"

@@ -57,7 +57,7 @@ const CryptoMarketCap = ({ setStartDate, startDate }) => {
             <h4 className='text-2xl font-semibold md:text-left text-center' >Crypto Market Cap & Volume</h4>
             <div className="btns flex space-y-6 md:flex-row flex-col justify-between">
                 <div className='flex gap-4  items-center'>
-                    <p className='text-[#8699b8]]'>Zoom</p>
+                    <p className='text-[#8699b8]'>Zoom</p>
                     <div className='flex gap-2'>
                         {timeframes.map((t) => {
                             return (
