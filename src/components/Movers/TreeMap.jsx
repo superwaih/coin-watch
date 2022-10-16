@@ -7,7 +7,7 @@ import {MoonLoader} from "react-spinners"
 
   
   const COLORS = [
-    "#964B00",
+    "#B57937",
     "#000000",
     "#808080",
     "#FFBA01",
@@ -42,10 +42,10 @@ import {MoonLoader} from "react-spinners"
             x={x + width / 2}
             y={y + height / 2 + 7}
             textAnchor="middle"
-            fill="#fff"
-            fontWeight={400}
+            fill="brown"
+            fontWeight={600}
             // transform='uppercase'
-            fontSize={18}
+            fontSize={19}
           >
             {name.toUpperCase()}
           </text>
