@@ -44,7 +44,7 @@ import {MoonLoader} from "react-spinners"
             textAnchor="middle"
             fill="brown"
             fontWeight={600}
-            className={name === "btc" ? "text-5xl md:text-8xl font-bold" : "text-2xl sm:text-3xl md:text-5xl font-bold" }  
+            className={name === "btc" ? " text-5xl md:text-8xl font-bold" : "text-xl sm:text-2xl md:text-[25px] lg:text-5xl font-bold" }  
             // transform='uppercase'
             // fontSize={25}
           >

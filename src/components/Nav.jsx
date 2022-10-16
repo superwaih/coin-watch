@@ -14,13 +14,13 @@ const Nav = () => {
        
        <div className={colorMode === 'light' ? "bg-[#b269ff] hidden md:block text-white font-bold" : "bg-[#b269ff] hidden md:block text-white font-bold"} >
      <div className=' p-4 w-[80%]  m-auto gap-4   flex items-center justify-center'>
-      <div className="logo flex-1 flex items-center justify-between">
+      <div className="logo flex-1 flex items-center justify-between gap-2">
       <h2 className='text-3xl '>Coin Watch</h2>
 
 
       <div className='flex gap-4'>
             <Link to={"/"} >
-              <p className='cursor-pointer '>Crypto Market Overview</p>
+              <p className='cursor-pointer '>Overview</p>
 
             </Link>
             <Link to={"/trending"}>
@@ -39,17 +39,7 @@ const Nav = () => {
     
 
       </div>
-      <div className="refresh_btn">
-        <Select 
-        >
-          <option>2s</option>
-          <option>4s</option>
-          <option>5s</option>
-          <option>20s</option>
-
-        </Select>
-
-      </div>
+     
       <div className="select_coin">
         <Select
         onChange={(e) => setCurrency(e.target.value)}
@@ -60,7 +50,7 @@ const Nav = () => {
         </Select>
 
       </div>
-      <div className="searchbar p-2 border border-slate-500 hidden md:flex gap-3 rounded items-center ">
+      <div className="searchbar p-2 border border-slate-500 hidden lg:flex gap-3 rounded items-center ">
       <FiSearch />
         <input className='border-none outline-none bg-transparent placeholder:text-gray-500' type="text" placeholder='Search' />
       </div>
