@@ -51,8 +51,8 @@ const MobileNav = () => {
 
 
                 <Link to={"/"} >
-                    <div className='flex gap-2 items-center'>
-                        <p className='cursor-pointer'>Crypto Market Overview</p>
+                    <div className='flex gap-2 items-center text-white'>
+                        <p className='cursor-pointer'>Overview</p>
                         <GrOverview />
                         
                     </div>
