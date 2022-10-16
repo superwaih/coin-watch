@@ -51,9 +51,9 @@ const MobileNav = () => {
 
 
                 <Link to={"/"} >
-                    <div className='flex gap-2 items-center text-white'>
+                    <div className='flex gap-2 items-center'>
                         <p className='cursor-pointer'>Overview</p>
-                        <GrOverview />
+                        <GrOverview className='text-white' />
                         
                     </div>
 
@@ -70,7 +70,7 @@ const MobileNav = () => {
                 </Link>
 
 
-                <div onClick={toggleColorMode} className="toggle_btn flex items-center flex-col cursor-pointer">
+                <div onClick={toggleColorMode} className="toggle_btn flex items-center gap-2 cursor-pointer">
                     <AiOutlineBulb />
                     {colorMode === 'light' ? 'Dark' : 'Light'}
 
