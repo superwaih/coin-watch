@@ -44,8 +44,9 @@ import {MoonLoader} from "react-spinners"
             textAnchor="middle"
             fill="brown"
             fontWeight={600}
+            className={name === "btc" ? "text-5xl md:text-8xl font-bold" : "text-2xl sm:text-3xl md:text-5xl font-bold" }  
             // transform='uppercase'
-            fontSize={19}
+            // fontSize={25}
           >
             {name.toUpperCase()}
           </text>
@@ -97,7 +98,7 @@ const TreeMapComponent = () => {
         <ResponsiveContainer width="98%" aspect={2 / 1}>
     
         <Treemap
-          width={400}
+          width={350}
           height={300}
           data={marketDominance}
           dataKey="size"
