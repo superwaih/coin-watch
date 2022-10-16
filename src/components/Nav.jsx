@@ -5,6 +5,7 @@ import { currencies } from '../data/resource'
 import { useColorMode } from '@chakra-ui/react'
 import {AiOutlineBulb} from "react-icons/ai"
 import { usePriceState } from '../context/priceContext'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -13,9 +14,24 @@ const Nav = () => {
        
        <div className={colorMode === 'light' ? "bg-[#b269ff] hidden md:block text-white font-bold" : "bg-[#b269ff] hidden md:block text-white font-bold"} >
      <div className=' p-4 w-[80%]  m-auto gap-4   flex items-center justify-center'>
-      <div className="logo flex-1">
+      <div className="logo flex-1 flex items-center justify-between">
       <h2 className='text-3xl '>Coin Watch</h2>
+
+
+      <div className='flex gap-4'>
+            <Link to={"/"} >
+              <p className='cursor-pointer '>Crypto Market Overview</p>
+
+            </Link>
+            <Link to={"/trending"}>
+              <p className='cursor-pointer'>Trending</p>
+
+
+            </Link>
+        </div>
       </div>
+
+       
 
       <div onClick={toggleColorMode} className="toggle_btn flex items-center flex-col cursor-pointer">
       <AiOutlineBulb />

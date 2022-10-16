@@ -8,10 +8,11 @@ import MobileNav from "./components/MobileNav";
 function App() {
   return (
     <div className="App  flex flex-col">
+      
+      <BrowserRouter>
       <Nav />
       <MobileNav />
       <Divider />
-      <BrowserRouter>
       <Routes>
         <Route path="/" element={<MarketPage />} />
         <Route path="/trending" element={<TrendingPage />} />

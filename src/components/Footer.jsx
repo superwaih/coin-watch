@@ -13,32 +13,31 @@ const Footer = () => {
        <div className="first flex flex-col gap-2">
         <h5 className='text-[#8699b8] font-semibold text-xl'>Menu</h5>
         <div className="menu_items flex flex-col gap-2">
-          <p>Coins</p>
-          <p>Portfolio</p>
-          <p>Overview</p>
-          <p>Exchanges</p>
+          <Link to="/">
+          <p>Crypto Market Overview</p>
+          </Link>
+
           <Link to="/trending">
           <p>Trending</p>
           </Link>
-          <p>Compare</p>
-          <p>API</p>
+         
 
         </div>
        </div>
        <div className="second flex flex-col gap-2">
        <h5 className='text-[#8699b8] font-semibold text-xl'>Coin Watch</h5>
-        <div className="menu_items flex flex-col gap-2">
+        {/* <div className="menu_items flex flex-col gap-2">
           <p>Conversion Tool</p>
           <p>All Coins</p>
           <p>Request a coin</p>
           <p>Request an Exchange</p>
           <p>Report a bug</p>
           <p>Contact us</p>
-        </div>
+        </div> */}
        </div>
        <div className="third second flex flex-col gap-2">
         <h5 className='text-[#8699b8] font-semibold text-xl'>About us</h5>
-        <p>Complete cryptocurrency market coverage with live coin prices, charts and crypto market cap featuring 19606 coins on 532 exchanges.</p>
+        {/* <p>Complete cryptocurrency market coverage with live coin prices, charts and crypto market cap featuring 19606 coins on 532 exchanges.</p> */}
        </div>
 
     </div>
