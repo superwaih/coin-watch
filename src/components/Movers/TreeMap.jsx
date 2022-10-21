@@ -59,7 +59,7 @@ import {MoonLoader} from "react-spinners"
             textAnchor="middle"
             fill="#fff"
             
-            className={name === "btc" ? "text-[20px] text-[#7D5425] sm:text-2xl md:text-[25px] lg:text-4xl md:font-bold" : "text-[9px] text-[#7D5425] sm:text-xl md:text-[20px] lg:text-2xl md:font-bold" }  
+            className={name === "btc" ? "text-[20px] text-[#7D5425] opacity-80 sm:text-2xl md:text-[30px] lg:text-5xl font-bold" : "text-[9px] opacity-80 text-[#7D5425] sm:text-xl md:text-[20px] lg:text-2xl md:font-bold" }  
             // transform='uppercase'
             // fontSize={25}
           >

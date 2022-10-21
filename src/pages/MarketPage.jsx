@@ -221,7 +221,7 @@ const MarketPage = () => {
 
   return (
     <div>
-    <div className='w-full mx-auto md:w-[75%] mt-32'>
+    <div className='w-full mx-auto md:w-[70%] mt-32'>
     <div className={colorMode === 'light' ? 
     ' border mb-4   flex-col  gap-4 rounded-tr-xl rounded-tl-xl flex items-center justify-center' : 
     ' border mb-4 bg-[#293143]  flex-col gap-4 rounded-tr-xl rounded-tl-xl flex justify-center'} >
