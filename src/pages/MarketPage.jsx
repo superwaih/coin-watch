@@ -229,7 +229,7 @@ const MarketPage = () => {
       <MarketCapChart chartData={chartData} loading={loading} />
       <LiquidityChart />
 
-      <div  className='p-4'>
+      <div  className='p-4 space-y-4 bg-slate-600'>
       <h2 className='text-2xl font-semibold md:text-left text-center py-4'>Crypto Market Cap Breakdown</h2>
       <TreeMapComponent />
     </div>
