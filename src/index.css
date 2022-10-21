@@ -12,3 +12,11 @@
 body{
     font-family: 'Roboto', sans-serif;
 }
+
+.header-link::after{
+    position: absolute;
+    top: 20%;
+    border-bottom: 1px solid red;
+    content: "";
+    /* height: 2px; */
+}

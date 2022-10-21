@@ -20,7 +20,7 @@ const Nav = () => {
 
       <div className='flex gap-4'>
             <Link to={"/"} >
-              <p className='cursor-pointer '>Overview</p>
+              <p className='cursor-pointer header-link relative hover:border-b-2  border-pink-600'>Overview</p>
 
             </Link>
             <Link to={"/trending"}>

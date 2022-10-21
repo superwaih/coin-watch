@@ -5,16 +5,27 @@ import {MoonLoader} from "react-spinners"
 
 
 
-  
+// const COLORS = [
+//   "#8889DD",
+//   "#9597E4",
+//   "#8DC77B",
+//   "#A5D297",
+//   "#E2CF45",
+//   "#F8C12D"
+// ];
   const COLORS = [
-    "#B57937",
+    "#B27836",
     "#000000",
-    "#808080",
+    "#A8B3B9",
     "#FFBA01",
     "#7EC8E3",
-    "#F07DEA",
-    
-  
+    "#ACA58F",
+    "#2459A6",
+    "#A51369",
+    "#B55319",
+    "#46679C"
+
+
   ];
 
   const CustomizedContent = (props) => {
@@ -30,10 +41,14 @@ import {MoonLoader} from "react-spinners"
           style={{
             fill:
               depth < 2
-                ? colors[Math.floor((index / root.children.length) * 6)]
+                ?
+                colors[index]
+                  // index === 0 ? colors[0] : index === 1 ? colors[1] : index === 2 ? colors[2] : index === 3 ? colors[3] : index === 4 ? colors[4] : index === 5 ? colors[5] : index === 6 ? colors[6] : "none"
+                
+                // colors[Math.floor((index / root.children.length) * 6)]
                 : "none",
-            stroke: "#fff",
-            strokeWidth: 2 / (depth + 1e-10),
+            // stroke: "#fff",
+            strokeWidth: 3 / (depth + 1e-10),
             strokeOpacity: 1 / (depth + 1e-10)
           }}
         />
@@ -44,11 +59,12 @@ import {MoonLoader} from "react-spinners"
             textAnchor="middle"
             fill="#fff"
             
-            className={name === "btc" ? " text-5xl md:text-8xl font-bold" : "text-[9px] sm:text-2xl md:text-[25px] lg:text-5xl md:font-bold" }  
+            className={name === "btc" ? "text-[20px] text-[#7D5425] sm:text-2xl md:text-[25px] lg:text-4xl md:font-bold" : "text-[9px] text-[#7D5425] sm:text-xl md:text-[20px] lg:text-2xl md:font-bold" }  
             // transform='uppercase'
             // fontSize={25}
           >
-            {name.toUpperCase()}
+            {/* {name === "btc" ? name.toUpperCase().slice(0, 3) : name.toUpperCase()} */}
+            {name.toUpperCase() }
           </text>
         ) : null}
       
@@ -82,6 +98,7 @@ const TreeMapComponent = () => {
     useEffect(() =>{
         fetchGlobalData()
     }, [])
+    console.log(marketDominance);
    
     if(loading){
       return (
@@ -95,15 +112,16 @@ const TreeMapComponent = () => {
       )
     }else{
       return (
-        <ResponsiveContainer width="98%" aspect={2 / 1}>
+        <ResponsiveContainer width="100%" aspect={4 / 1}>
     
         <Treemap
-          width={350}
-          height={300}
+          width={400}
+          height={200}
           data={marketDominance}
           dataKey="size"
-          stroke="#fff"
+          // stroke="#fff"
           fill="#8884d8"
+          // style={{ margin: "0 auto" }}
           content={<CustomizedContent colors={COLORS} />}
         >
           <Tooltip />
